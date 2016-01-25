@@ -9,9 +9,9 @@
     <div class="wrapper">
         <div class="title">snagwing</div>
         <div class="navi">
-            <i class="fa fa-bars" onclick="nav()"></i>
+            <i class="fa fa-bars"></i>
             <ul>
-                <li>about</li>
+                <a href="about.html"><li>about</li></a>
                 <li>music</li>
                 <li>news</li>
                 <li>contact</li>
@@ -25,8 +25,12 @@
             <iframe class="player-large" src="http://bandcamp.com/EmbeddedPlayer/album=362288249/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/" seamless><a href="http://snagwing.bandcamp.com/album/triangle-ep">Triangle EP by Snagwing</a></iframe>
         </div>
         <div class="HL-content">
-            <h1>Triangle EP</h1>
-            <h3 style="font-style: italic;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h3>
+            <div class="group">
+                <img class="xsmall" src="assets/images/triangleep.jpg">
+                <h1>Triangle EP</h1>
+            </div>
+<!--             <iframe class="player-xsmall" style="border: 0; width: 100%; height: 42px;" src="http://bandcamp.com/EmbeddedPlayer/album=362288249/size=small/bgcol=ffffff/linkcol=0687f5/artwork=none/transparent=true/" seamless><a href="http://snagwing.bandcamp.com/album/triangle-ep">Triangle EP by Snagwing</a></iframe> -->
+            <p class="callout" style="font-style: italic;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
             <p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
             <p>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</p>
             <iframe class="player-small" style="border: 0; width: 100%; height: 120px;" src="http://bandcamp.com/EmbeddedPlayer/album=362288249/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://snagwing.bandcamp.com/album/triangle-ep">Triangle EP by Snagwing</a></iframe>
@@ -40,14 +44,32 @@
 <div class="wrapper" >
     <section class="music">
         <h2>albums + eps</h2>
-        <div class="hscroll">
-            <img class="col-3" src="assets/images/triangleEP.jpg">
-            <img class="col-3" src="assets/images/look.jpg">
-            <img class="col-3" src="assets/images/hotsesh.jpg">
-            <img class="col-3" src="assets/images/honestly.jpg">
-            <img class="col-3" src="assets/images/dreamsongs.jpg">
-            <img class="col-3" src="assets/images/patience.jpg">
-        </div>
+        <section id="cslide-slides" class="cslide-slides-master">
+            <div class="cslide-prev-next">
+                <i class="cslide-prev fa fa-chevron-left"></i>
+                <i class="cslide-next fa fa-chevron-right"></i>
+            </div>
+            <div class="cslide-slides-container">
+                <div class="cslide-slide">
+                    <img class="content" src="assets/images/triangleEP.jpg">
+                </div>
+                <div class="cslide-slide">
+                    <img class="content" src="assets/images/look.jpg">
+                </div>
+                <div class="cslide-slide">
+                    <img class="content" src="assets/images/hotsesh.jpg">
+                </div>
+                <div class="cslide-slide">
+                    <img class="content" src="assets/images/honestly.jpg">
+                </div>
+                <div class="cslide-slide">
+                    <img class="content" src="assets/images/dreamsongs.jpg">
+                </div>
+                <div class="cslide-slide">
+                    <img class="content" src="assets/images/patience.jpg">
+                </div>
+            </div>
+        </section><!-- #cslide-slides -->
     </section>
     <section class="news">
         <h2>news</h2>
