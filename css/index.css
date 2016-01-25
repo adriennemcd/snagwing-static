@@ -177,16 +177,8 @@ iframe.player-small {
 }
 .cslide-slide {
     float:left;
-    padding: 5px;
+    padding-right: 5px;
 }
-
-/*.cslide-first {
-    padding-left: 0px;
-}
-
-.cslide-last {
-    padding-right: 0px;
-}*/
 
 /* prev next buttons */
 .cslide-prev-next {
@@ -225,7 +217,7 @@ iframe.player-small {
 
 .cslide-next {
     float: right;
-    margin-right: 8px;
+    margin-right: 13px;
     text-align: center;
 }
 
