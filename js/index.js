@@ -3,7 +3,7 @@ $(document).ready(function(){
 });
 
 $(window).resize(function(){
-    document.location.reload(false);
+    // document.location.reload(false);
     $("#cslide-slides").cslide();
 });
 
