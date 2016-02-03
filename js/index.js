@@ -1,10 +1,27 @@
 $(document).ready(function(){
     $("#cslide-slides").cslide();
+    checkSize();
 });
 
 $(window).resize(function(){
     // document.location.reload(false);
     $("#cslide-slides").cslide();
+    checkSize();
+});
+
+//Check whether the window is tablet or mobile based on nav icon visibility
+//Allows nav to be visible when window is resized large, even with toggling on smaller screens
+function checkSize(){
+    if ($(".fa-bars").css('display') == 'none'){
+      $('.navi > ul').css('display', 'inline');
+    } else {
+      $('.navi > ul').css('display', 'none');
+    }
+}
+
+// Toggle menu in mobile site
+$('.fa-bars').click(function(){
+  $('.navi > ul').slideToggle();
 });
 
 // scroll down when highlight section arrow is clicked
