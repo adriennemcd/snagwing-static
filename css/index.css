@@ -9,7 +9,7 @@ p {
     color: gray;
 }
 
-div {
+div, section {
     box-sizing: border-box;
 }
 
@@ -30,6 +30,10 @@ button:hover {
     background-color: white;
     color: black;
     transition: none;
+}
+
+img {
+    width: 100%;
 }
 
 .fa {
@@ -117,7 +121,7 @@ nav li {
 
 .HL-content {
     position: absolute;
-    bottom: 40%;
+    bottom: 35%;
     left: 0;
     right: 0;
     width: 92%;
@@ -132,30 +136,35 @@ nav li {
     margin: 30px 0;
 }
 
-.content {
-    width: 100%;
+.insta-pic {
+    width: 50%;
+    float: left;
+    padding: 0 1.5px 3px 0;
+}
+
+.insta-pic:nth-child(even) {
+    padding: 0 0px 3px 1.5px;
 }
 
 .news-item {
-    float: left;
     width: 100%;
-    display: inline-block;
     margin-bottom: 30px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-top: 10px solid rgba(0,0,0,.8);
+    padding: 0 10px 10px 10px;
 }
 
 .news-item:last-child {
     margin-bottom: 0px;
 }
 
-.news-item-pic {
-    height: 50px;
-    background-color: blue;
-    overflow: hidden;
+.news-item > h4 {
+    margin-bottom: 0;
 }
 
-.news-item-content {
-    padding: 0 10px;
+.date {
+    font-size: .7em;
+    margin: .6em 0;
 }
 
 /* SLIDES */
@@ -182,41 +191,51 @@ nav li {
 .cslide-prev-next {
     z-index: 100;
     position: absolute;
-    top: 43%;
+    top: 0;
+    height: 100%;
     width: 100%;
-    display: none;
+    display: none; /* displayed with js */
 }
 
 .cslide-prev,.cslide-next {
-    display:inline-block;
-    background:rgb(100,200,150);
-    color:#fff;
-    width: 1em;
-    height: 1em;
-    padding:10px;
-    border-radius: 50%;
+    box-sizing: border-box;
+    position: absolute;
+    background: black;
+    color: #fff;
+    width: 35px;
+    height: 100%;
+    padding: 0 10px;
     cursor: pointer;
-    opacity: .9;
+    opacity: .8;
     text-align: center;
+}
+
+.fa-angle-left,.fa-angle-right {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-weight: bold;
 }
 
 .cslide-prev:hover,
 .cslide-next:hover {
-    background:rgb(75,175,125);
+    background: black;
+    opacity: .6;
 }
 .cslide-prev.cslide-disabled:hover,
 .cslide-next.cslide-disabled:hover {
-    background:rgb(100,200,150);
+    background: black;
+    opacity: .7;
 }
 
 .cslide-prev {
-    float: left;
-    margin-left: 8px;
+    left: 0;
 }
 
 .cslide-next {
-    float: right;
-    margin-right: 13px;
+    right: 0;
 }
 
 .cslide-disabled {
@@ -267,13 +286,20 @@ nav li {
 }
 
 @media (min-width: 700px) {
-    .news-item {
-        width: calc(50% - 20px);
-        margin: 0 20px 20px 0px;
+
+}
+
+@media (min-width: 650px) {
+    .insta {
+        float: left;
+        width: 50%;
+        padding-right: 15px;
     }
 
-    .news-item:last-child {
-        margin-right: 0px;
+    .news {
+        float: left;
+        width: 50%;
+        padding-left: 15px;
     }
 }
 
@@ -288,7 +314,6 @@ nav li {
 }
 
 @media (min-width: 455px) {
-
     .group > h1 {
         margin-bottom: 0;
     }

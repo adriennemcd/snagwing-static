@@ -12,9 +12,9 @@
             <i class="fa fa-bars"></i>
             <ul>
                 <a href="about.html"><li>about</li></a>
-                <li>music</li>
-                <li>news</li>
-                <li>contact</li>
+                <a href="music.html"><li>music</li></a>
+                <a href="news.html"><li>news</li></a>
+                <a href="contact.html"><li>contact</li></a>
             </ul>
         </div>
     </div> <!-- .wrapper -->
@@ -30,8 +30,8 @@
         <h2>albums + eps</h2>
         <section id="cslide-slides" class="cslide-slides-master">
             <div class="cslide-prev-next">
-                <i class="cslide-prev fa fa-angle-left"></i>
-                <i class="cslide-next fa fa-angle-right"></i>
+                <div class="cslide-prev"><i class="fa fa-angle-left"></i></div>
+                <div class="cslide-next"><i class="fa fa-angle-right"></i></div>
             </div>
             <div class="cslide-slides-container">
                 <div class="cslide-slide">
@@ -55,39 +55,42 @@
             </div>
         </section><!-- #cslide-slides -->
     </section>
-    <section class="news group">
-        <h2>news</h2>
-            <div class="news-masonry">
-            <div class="news-item">
-                <div class="news-item-pic"><img class="content" src="assets/images/candlelit.jpg"></div>
-                <div class="news-item-content">
-                    <h4>Release of Triangle EP</h4>
-                    <p>Just released!  New EP very exciting.  How much text will look okay here? [...]</p>
-                </div>
+    <div class="group">
+        <section class="insta group">
+            <h2>instagram</h2>
+            <div class="insta-container">
+                <div class="insta-pic"><img src="assets/images/candlelit_sq.jpg"></div>
+                <div class="insta-pic"><img src="assets/images/candlelit_sq.jpg"></div>
+                <div class="insta-pic"><img src="assets/images/candlelit_sq.jpg"></div>
+                <div class="insta-pic"><img src="assets/images/candlelit_sq.jpg"></div>
+                <div class="insta-pic"><img src="assets/images/candlelit_sq.jpg"></div>
+                <div class="insta-pic"><img src="assets/images/candlelit_sq.jpg"></div>
             </div>
+        </section><!-- .insta -->
+        <section class="news group">
+            <h2>news</h2>
             <div class="news-item">
-                <div class="news-item-pic"><img class="content" src="assets/images/dreamsongs.jpg"></div>
-                <div class="news-item-content">
-                    <h4>Come see Snagwing at Candlelit</h4>
-                    <p>Snagwing is playing at Candlelit, first show [...]</p>
-                </div>
+                <h4>Release of Triangle EP</h4>
+                <p class="date">04 Feb 2016</p>
+                <p>Just released!  New EP very exciting.  How much text will look okay here? [...]</p>
             </div>
-            <div class="news-item">
-                <div class="news-item-pic"><img class="content" src="assets/images/look.jpg"></div>
-                <div class="news-item-content">
-                    <h4>Here's another news item</h4>
-                    <p>tralalallalala laalalalaaaaa aaaa aaaaaaa aa [...]</p>
-                </div>
+                <div class="news-item">
+                <h4>Come see Snagwing at Candlelit</h4>
+                <p class="date">04 Feb 2016</p>
+                <p>Snagwing is playing at Candlelit, first show [...]</p>
             </div>
-            <div class="news-item">
-                <div class="news-item-pic"><img class="content" src="assets/images/triangleEP.jpg"></div>
-                <div class="news-item-content">
-                    <h4>Here's another news item</h4>
-                    <p>tralalallalala laalalalaaaaa aaaa aaaaaaa aa [...]</p>
-                </div>
+                <div class="news-item">
+                <h4>Here's another news item</h4>
+                <p class="date">04 Feb 2016</p>
+                <p>tralalallalala laalalalaaaaa aaaa aaaaaaa aa [...]</p>
             </div>
-        </div>
-    </section>
+                <div class="news-item">
+                <h4>Here's another news item</h4>
+                <p class="date">04 Feb 2016</p>
+                <p>tralalallalala laalalalaaaaa aaaa aaaaaaa aa [...]</p>
+            </div>
+        </section><!-- .news -->
+    </div><!-- .group -->
     <section class="youtube">
         <h2>video</h2>
         <iframe class="youtube" width="100%" height="300px" src="https://www.youtube.com/embed/2pwhHtrjoX8?rel=0" frameborder="0" allowfullscreen></iframe>
@@ -101,8 +104,6 @@
 </footer>
 <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.2.0/imagesloaded.pkgd.min.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>

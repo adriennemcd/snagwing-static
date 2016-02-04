@@ -24,38 +24,13 @@ $('.fa-bars').click(function(){
   $('.navi > ul').slideToggle();
 });
 
-// Add masonry for news items
-var $grid = $('.news-masonry').masonry({
-  'itemSelector': '.news-item',
-  'transitionDuration': '1.0s'
-});
-
-// Refresh masonry when images are loaded
-$('.news-masonry').imagesLoaded( function() {
-  $grid.masonry('layout');
-});
-
-// Hide/show highlight section content area
-$('.fa-angle-right, .fa-angle-left').click(function(){
-  var $ref = $(this);
-    if( $('.HL-image').css('left') == '0px') {
-        $('.HL-image').animate({left: '247px'}, 800, function(){
-          $ref.toggleClass('fa-angle-right fa-angle-left');
-        });
-    } else {
-        $('.HL-image').css({'left': '247', 'width': '270px'}).animate({left: '0px'}, 800, function(){
-          $ref.toggleClass('fa-angle-right fa-angle-left');
-        });
-    }
-});
-
 // scroll down when highlight section arrow is clicked
-$('a').click(function(){
-    $('html, body').animate({
-        scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
-    }, 500);
-    return false;
-});
+// $('a').click(function(){
+//     $('html, body').animate({
+//         scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
+//     }, 500);
+//     return false;
+// });
 
 // horizonal responsive scrolling slides
 // modified from http://callmenick.com/post/responsive-content-slider for media query compatibility
@@ -65,8 +40,7 @@ $('a').click(function(){
 
         this.each(function() {
 
-            var slidesContainerId = "#"+($(this).attr("id"));
-
+            var slidesContainerId = "#"+($(this).attr("id"));           // #cslide-slides
             var len = $(slidesContainerId+" .cslide-slide").size();     // get number of slides
             var slidesContainerWidth = len*100+"%";                     // get width of the slide container
             var slidesContainerWidth50 = (len/2)*100+"%";
@@ -101,8 +75,18 @@ $('a').click(function(){
                 });
                 responSlidesContainerWidth = slidesContainerWidth33;
             }
-
             console.log("responsive slide container width: " + responSlidesContainerWidth);
+
+            $(window).resize(function(){
+                duringResize();
+            });
+
+            function duringResize() {
+              console.log("responsive slide container width: " + responSlidesContainerWidth);
+              var i = $(slidesContainerId+" .cslide-slide.cslide-active").index();
+              var n = i+1;
+              console.log("n: " + n);
+            }
 
             // add correct classes to first and last slide
             $(slidesContainerId+" .cslide-slides-container .cslide-slide").last().addClass("cslide-last");
@@ -122,8 +106,11 @@ $('a').click(function(){
             $(slidesContainerId+" .cslide-next").click(function(){
                 var i = $(slidesContainerId+" .cslide-slide.cslide-active").index();
                 var n = i+1;
+                console.log("n: " + n);
                 var slideLeft = "-"+n*100+"%";
+                console.log("slideLeft: " + slideLeft);
                 var slideLeftAbs = n*100+"%";
+                console.log("responSlidesContainerWidth: " + responSlidesContainerWidth);
 
                 $(slidesContainerId+" .cslide-slide.cslide-active").removeClass("cslide-active").next(".cslide-slide").addClass("cslide-active");
                 // check whether you are at the last slide and should slide back to the beginning, or continue to slide left
