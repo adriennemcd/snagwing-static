@@ -24,6 +24,17 @@ $('.fa-bars').click(function(){
   $('.navi > ul').slideToggle();
 });
 
+// Add masonry for news items
+var $grid = $('.news-masonry').masonry({
+  'itemSelector': '.news-item',
+  'transitionDuration': '1.0s'
+});
+
+// Refresh masonry when images are loaded
+$('.news-masonry').imagesLoaded( function() {
+  $grid.masonry('layout');
+});
+
 // scroll down when highlight section arrow is clicked
 $('a').click(function(){
     $('html, body').animate({
