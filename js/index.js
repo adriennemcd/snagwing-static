@@ -35,6 +35,20 @@ $('.news-masonry').imagesLoaded( function() {
   $grid.masonry('layout');
 });
 
+// Hide/show highlight section content area
+$('.fa-angle-right, .fa-angle-left').click(function(){
+  var $ref = $(this);
+    if( $('.HL-image').css('left') == '0px') {
+        $('.HL-image').animate({left: '247px'}, 800, function(){
+          $ref.toggleClass('fa-angle-right fa-angle-left');
+        });
+    } else {
+        $('.HL-image').css({'left': '247', 'width': '270px'}).animate({left: '0px'}, 800, function(){
+          $ref.toggleClass('fa-angle-right fa-angle-left');
+        });
+    }
+});
+
 // scroll down when highlight section arrow is clicked
 $('a').click(function(){
     $('html, body').animate({
