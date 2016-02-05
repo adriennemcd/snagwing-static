@@ -9,30 +9,35 @@ $(window).resize(function(){
     // checkSize();
 });
 
-$( ".hamburger" ).on( "click", function() {
-  $( '#nav-toggle' ).toggleClass( "active" );
+// Toggle hamburger button and nav menu
+$( ".hamburger" ).click(function() {
+    $( '#nav-toggle' ).toggleClass( "active" );
+    if($('#nav-toggle').attr('class') == 'active') {
+        $('nav').animate({width: '290px'});
+    } else {
+        $('nav').animate({width: '60px'});
+    }
+    return false;
 });
 
-// hide navigation bar when scrolling down
-// var senseSpeed = 3;
-// var previousScroll = 0;
-// $(window).scroll(function(event){
-//     var scroller = $(this).scrollTop();
-//     if (scroller-senseSpeed > previousScroll){
-//         $("nav").filter(':not(:animated)').slideUp();
-//         if($('.navi > ul').css('display','block')) {
-//             $('.navi > ul').slideUp();
-//         }
-//     } else if (scroller+senseSpeed < previousScroll) {
-//         $("nav").filter(':not(:animated)').slideDown();
-//     }
-//     if($('.highlight').visible(true)) {
-//         $("nav").css('background-color','none');
-//     } else {
-//         $("nav").css({'background-color':'#222831','box-shadow':'0 0 15px rgba(0,0,0,0.2)'});
-//     }
-//     previousScroll = scroller;
-// });
+// if user starts scrolling, close nav bar
+$(window).scroll(function() {
+    if($(this).scrollTop() >0 && $('#nav-toggle').is('.active')) {
+        $( '#nav-toggle' ).toggleClass( "active" );
+        $('nav').animate({width: '60px'});
+    }
+
+    if ($(this).scrollTop() > 300) {
+        $('.goUp').fadeIn();
+    } else {
+        $('.goUp').fadeOut();
+    }
+});
+
+$('.goUp').click(function () {
+    $("html, body").animate({ scrollTop: 0}, 600);
+    return false;
+});
 
 //Check whether the window is tablet or mobile based on nav icon visibility
 //Allows nav to be visible when window is resized large, even with toggling on smaller screens
@@ -43,11 +48,6 @@ $( ".hamburger" ).on( "click", function() {
 //       $('.navi > ul').css('display', 'none');
 //     }
 // }
-
-// Toggle menu in mobile site
-$('.hamburger').click(function(){
-  $('.navi > ul').slideToggle();
-});
 
 // horizonal responsive scrolling slides
 // modified from http://callmenick.com/post/responsive-content-slider for media query compatibility

@@ -21,6 +21,7 @@ section {
 button {
     background-color: transparent;
     transition: background-color 0.2s ease;
+    text-transform: uppercase;
     border: 2px solid white;
     border-radius: 3px;
     padding: 10px;
@@ -29,7 +30,7 @@ button {
 
 button:hover {
     background-color: white;
-    color: black;
+    color: #222831;
     transition: none;
 }
 
@@ -96,7 +97,7 @@ nav {
     z-index: 200;
     width: 60px;
     height: 100vh;
-    padding: 20px 0 20px 0;
+    padding: 25px 0 20px 0;
     line-height: 1.4em;
     color: white;
     background-color: #222831;
@@ -105,13 +106,26 @@ nav {
 
 nav ul {
     list-style-type: none;
+    padding: 0 19px;
+    margin-top: 38px;
 }
 
 nav li {
     display: block;
+    padding: 25px 0;
+    margin-left: 42px;
+    border-bottom: 1px solid #393E46;
+}
+
+.navi {
+    width: 100%;
+    text-align: right;
 }
 
 .hamburger {
+    position: absolute;
+    top: 25px;
+    right: 19px;
     padding-top: 10px;
     width: 22px;
     height: 22px;
@@ -119,38 +133,50 @@ nav li {
     cursor: pointer;
 }
 
+.goUp {
+    position: absolute;
+    bottom: 25px;
+    right: 19px;
+    padding-bottom: 10px;
+    width: 22px;
+    height: 22px;
+    margin: 0 auto;
+    cursor: pointer;
+    display: none;
+}
+
 /* for hamburger animation: https://gist.github.com/elijahmanor/9331915#file-jquery-js */
 #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
-  border-radius: 1px;
-  height: 3px;
-  width: 22px;
-  background: white;
-  position: absolute;
-  display: block;
-  content: '';
+    border-radius: 1px;
+    height: 3px;
+    width: 22px;
+    background: white;
+    position: absolute;
+    display: block;
+    content: '';
 }
 #nav-toggle span:before {
-  top: -7px;
+    top: -7px;
 }
 #nav-toggle span:after {
-  bottom: -7px;
+    bottom: -7px;
 }
 
 #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
-  transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
 }
 #nav-toggle.active span {
-  background-color: transparent;
-  width: 0px;
+    background-color: transparent;
+    width: 0px;
 }
 #nav-toggle.active span:before, #nav-toggle.active span:after {
-  top: 0;
+    top: 0;
 }
 #nav-toggle.active span:before {
-  transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 #nav-toggle.active span:after {
-  transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
 .title {
@@ -159,24 +185,16 @@ nav li {
     color: white;
     float: left;
     width: 100%;
-    font-size: 2em;
+    font-size: 2.3em;
     padding-top: 25px;
-}
-
-.navi {
-    width: 100%;
-    text-align: right;
-}
-
-.navi > ul {
-    display: none;
+    text-align: center;
 }
 
 /* HOMEPAGE SECTIONS */
 
 .highlight {
     position: relative;
-    background-image:     linear-gradient(rgba(0, 173, 181, 0.40), rgba(0, 173, 181, 0.40)), url(../assets/images/candlelit.jpg);
+    background-image: linear-gradient(rgba(0, 173, 181, 0.40), rgba(0, 173, 181, 0.40)), url(../assets/images/candlelit.jpg);
     background-size: cover;
     background-position: center bottom;
     width: 100%;
@@ -205,8 +223,6 @@ font-family: 'Josefin Sans', sans-serif;
 }
 
 .insta-container {
-/*    padding: 12px solid rgba(0,0,0,0.5);*/
-/*    background-color: rgba(0,0,0,0.5);*/
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
@@ -224,9 +240,7 @@ font-family: 'Josefin Sans', sans-serif;
     width: 100%;
     margin-bottom: 30px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-/*    border-top: 10px solid #00ADB5;*/
     background-color: rgba(0,0,0,0.5);
-/*    background-color: #393E46;*/
     padding: 10px;
 }
 
@@ -241,6 +255,10 @@ font-family: 'Josefin Sans', sans-serif;
 .date {
     font-size: .7em;
     margin: .6em 0;
+}
+
+iframe.youtube {
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 /* SLIDES */
@@ -261,6 +279,10 @@ font-family: 'Josefin Sans', sans-serif;
 }
 .cslide-slide {
     float:left;
+}
+
+.cslide-slide:hover {
+    background: linear-gradient(rgba(0, 173, 181, 0.40), rgba(0, 173, 181, 0.40));
 }
 
 /* prev next buttons */
@@ -392,5 +414,9 @@ font-family: 'Josefin Sans', sans-serif;
 @media (min-width: 455px) {
     .group > h1 {
         margin-bottom: 0;
+    }
+
+    .title {
+        text-align: left;
     }
 }
