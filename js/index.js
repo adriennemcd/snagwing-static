@@ -1,36 +1,53 @@
 $(document).ready(function(){
     $("#cslide-slides").cslide();
-    checkSize();
+    // checkSize();
 });
 
 $(window).resize(function(){
     // document.location.reload(false);
     $("#cslide-slides").cslide();
-    checkSize();
+    // checkSize();
 });
+
+$( ".hamburger" ).on( "click", function() {
+  $( '#nav-toggle' ).toggleClass( "active" );
+});
+
+// hide navigation bar when scrolling down
+// var senseSpeed = 3;
+// var previousScroll = 0;
+// $(window).scroll(function(event){
+//     var scroller = $(this).scrollTop();
+//     if (scroller-senseSpeed > previousScroll){
+//         $("nav").filter(':not(:animated)').slideUp();
+//         if($('.navi > ul').css('display','block')) {
+//             $('.navi > ul').slideUp();
+//         }
+//     } else if (scroller+senseSpeed < previousScroll) {
+//         $("nav").filter(':not(:animated)').slideDown();
+//     }
+//     if($('.highlight').visible(true)) {
+//         $("nav").css('background-color','none');
+//     } else {
+//         $("nav").css({'background-color':'#222831','box-shadow':'0 0 15px rgba(0,0,0,0.2)'});
+//     }
+//     previousScroll = scroller;
+// });
 
 //Check whether the window is tablet or mobile based on nav icon visibility
 //Allows nav to be visible when window is resized large, even with toggling on smaller screens
-function checkSize(){
-    if ($(".fa-bars").css('display') == 'none'){
-      $('.navi > ul').css('display', 'inline');
-    } else {
-      $('.navi > ul').css('display', 'none');
-    }
-}
+// function checkSize(){
+//     if ($(".fa-bars").css('display') == 'none'){
+//       $('.navi > ul').css('display', 'inline');
+//     } else {
+//       $('.navi > ul').css('display', 'none');
+//     }
+// }
 
 // Toggle menu in mobile site
-$('.fa-bars').click(function(){
+$('.hamburger').click(function(){
   $('.navi > ul').slideToggle();
 });
-
-// scroll down when highlight section arrow is clicked
-// $('a').click(function(){
-//     $('html, body').animate({
-//         scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
-//     }, 500);
-//     return false;
-// });
 
 // horizonal responsive scrolling slides
 // modified from http://callmenick.com/post/responsive-content-slider for media query compatibility
@@ -159,3 +176,73 @@ $('.fa-bars').click(function(){
     }
 
 }(jQuery));
+
+// to check visibility of elements
+(function($){
+
+    /**
+     * Copyright 2012, Digital Fusion
+     * Licensed under the MIT license.
+     * http://teamdf.com/jquery-plugins/license/
+     *
+     * @author Sam Sehnert
+     * @desc A small plugin that checks whether elements are within
+     *       the user visible viewport of a web browser.
+     *       only accounts for vertical position, not horizontal.
+     */
+    var $w = $(window);
+    $.fn.visible = function(partial,hidden,direction){
+
+        if (this.length < 1)
+            return;
+
+        var $t        = this.length > 1 ? this.eq(0) : this,
+            t         = $t.get(0),
+            vpWidth   = $w.width(),
+            vpHeight  = $w.height(),
+            direction = (direction) ? direction : 'both',
+            clientSize = hidden === true ? t.offsetWidth * t.offsetHeight : true;
+
+        if (typeof t.getBoundingClientRect === 'function'){
+
+            // Use this native browser method, if available.
+            var rec = t.getBoundingClientRect(),
+                tViz = rec.top    >= 0 && rec.top    <  vpHeight,
+                bViz = rec.bottom >  0 && rec.bottom <= vpHeight,
+                lViz = rec.left   >= 0 && rec.left   <  vpWidth,
+                rViz = rec.right  >  0 && rec.right  <= vpWidth,
+                vVisible   = partial ? tViz || bViz : tViz && bViz,
+                hVisible   = partial ? lViz || rViz : lViz && rViz;
+
+            if(direction === 'both')
+                return clientSize && vVisible && hVisible;
+            else if(direction === 'vertical')
+                return clientSize && vVisible;
+            else if(direction === 'horizontal')
+                return clientSize && hVisible;
+        } else {
+
+            var viewTop         = $w.scrollTop(),
+                viewBottom      = viewTop + vpHeight,
+                viewLeft        = $w.scrollLeft(),
+                viewRight       = viewLeft + vpWidth,
+                offset          = $t.offset(),
+                _top            = offset.top,
+                _bottom         = _top + $t.height(),
+                _left           = offset.left,
+                _right          = _left + $t.width(),
+                compareTop      = partial === true ? _bottom : _top,
+                compareBottom   = partial === true ? _top : _bottom,
+                compareLeft     = partial === true ? _right : _left,
+                compareRight    = partial === true ? _left : _right;
+
+            if(direction === 'both')
+                return !!clientSize && ((compareBottom <= viewBottom) && (compareTop >= viewTop)) && ((compareRight <= viewRight) && (compareLeft >= viewLeft));
+            else if(direction === 'vertical')
+                return !!clientSize && ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+            else if(direction === 'horizontal')
+                return !!clientSize && ((compareRight <= viewRight) && (compareLeft >= viewLeft));
+        }
+    };
+
+})(jQuery);
