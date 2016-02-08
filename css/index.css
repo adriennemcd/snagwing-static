@@ -1,7 +1,6 @@
 /* BASIC ELEMENTS */
 
 body {
-/*    margin-top: 62px;*/
     background-color: #222831;
 }
 
@@ -34,8 +33,12 @@ button:hover {
     transition: none;
 }
 
-h1,h2,h3,h4,h5,h6,p,button {
+p,button {
     font-family: 'Roboto', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6,p {
@@ -47,6 +50,30 @@ img {
     width: 100%;
 }
 
+footer {
+    width: 100%;
+    height: auto;
+    font-size: .9em;
+}
+
+.footer-item {
+    width: 100%;
+    text-align: center;
+}
+
+.footer-item i {
+    vertical-align: middle;
+}
+
+img.amcd {
+    width: 60px;
+    height: 27px;
+}
+
+.lift {
+    padding-bottom: 10px;
+}
+
 .fa {
     font-size: 1.6em;
 }
@@ -56,26 +83,31 @@ a:link {
     text-decoration: none;
 }
 
-a:hover {
-    color: #00E0EB;
-}
-
 a:visited {
     color: #00ADB5;
 }
 
+a:hover {
+    color: #00E0EB;
+}
+
+a:active {
+    color: #00E0EB;
+}
+
+
 /* BASIC LAYOUTS */
+
+.main {
+    float: left;
+    width: calc(100% - 60px);
+}
 
 .wrapper {
     width: 92%;
     max-width: 1050px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.main {
-    float: left;
-    width: calc(100% - 60px);
 }
 
 .group:before,
@@ -85,6 +117,10 @@ a:visited {
 }
 .group:after {
     clear: both;
+}
+
+.content {
+    padding: 15px;
 }
 
 /* NAVIGATION */
@@ -100,26 +136,26 @@ nav {
     padding: 25px 0 20px 0;
     line-height: 1.4em;
     color: white;
-    background-color: #222831;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0 19px;
-    margin-top: 38px;
-}
-
-nav li {
-    display: block;
-    padding: 25px 0;
-    margin-left: 42px;
-    border-bottom: 1px solid #393E46;
+    background-color: #393E46;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
 .navi {
     width: 100%;
     text-align: right;
+}
+
+.navi > ul {
+    list-style-type: none;
+    padding: 0 19px;
+    margin-top: 38px;
+}
+
+.navi > ul > li {
+    display: block;
+    padding: 25px 0;
+    margin-left: 42px;
+    border-bottom: 1px solid #222831;
 }
 
 .hamburger {
@@ -143,6 +179,20 @@ nav li {
     margin: 0 auto;
     cursor: pointer;
     display: none;
+}
+
+.social {
+    position: absolute;
+    bottom: 10px;
+    right: 19px;
+    width: 22px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.social > i {
+    padding-bottom: 15px;
+
 }
 
 /* for hamburger animation: https://gist.github.com/elijahmanor/9331915#file-jquery-js */
@@ -198,8 +248,6 @@ nav li {
     background-size: cover;
     background-position: center bottom;
     width: 100%;
-/*    height: calc(100vh - 62px);
-    margin-top: 62px;*/
     height: 100vh;
 }
 
@@ -236,12 +284,16 @@ font-family: 'Josefin Sans', sans-serif;
     padding: 0 0 12px 6px;
 }
 
+.insta-pic:last-child,
+.insta-pic:nth-last-child(2) {
+    padding-bottom: 0px;
+}
+
 .news-item {
     width: 100%;
     margin-bottom: 30px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     background-color: rgba(0,0,0,0.5);
-    padding: 10px;
 }
 
 .news-item:last-child {
@@ -298,34 +350,28 @@ iframe.youtube {
 .cslide-prev,.cslide-next {
     box-sizing: border-box;
     position: absolute;
-    background: black;
-    color: #fff;
-    width: 35px;
+    color: black;
+    width: 50px;
     height: 100%;
     padding: 0 10px;
     cursor: pointer;
-    opacity: .8;
     text-align: center;
 }
 
-.fa-angle-left,.fa-angle-right {
+.fa-arrow-circle-left,.fa-arrow-circle-right {
     position: absolute;
-    top: 45%;
+    top: 42%;
     left: 0;
     right: 0;
     margin: 0 auto;
+    font-size: 3em;
     font-weight: bold;
+    color: #393E46;
 }
 
 .cslide-prev:hover,
 .cslide-next:hover {
-    background: black;
-    opacity: .6;
-}
-.cslide-prev.cslide-disabled:hover,
-.cslide-next.cslide-disabled:hover {
-    background: black;
-    opacity: .7;
+
 }
 
 .cslide-prev {
@@ -336,44 +382,10 @@ iframe.youtube {
     right: 0;
 }
 
-.cslide-disabled {
-/*    opacity: 0.3;*/
-}
-
 /* MEDIA QUERIES */
 
 /* Main break: navigation change, 2 column highlight section, etc. */
 @media (min-width: 850px) {
-/*    .navi > ul {
-        display: inline;
-    }
-
-    .navi .fa {
-        display: none;
-    }
-
-    nav ul {
-        list-style-type: none;
-        display: inline;
-    }
-
-    nav li {
-        display: inline-block;
-    }
-
-    .title {
-        float: left;
-        width: 50%;
-        font-size: 2em;
-        font-weight: bold;
-    }
-
-    .navi {
-        float: left;
-        width: 50%;
-        text-align: right;
-    }*/
-
     .HL-title {
         font-size: 6em;
     }
@@ -381,10 +393,6 @@ iframe.youtube {
     iframe.youtube {
         height: 500px;
     }
-}
-
-@media (min-width: 700px) {
-
 }
 
 @media (min-width: 650px) {
@@ -412,9 +420,9 @@ iframe.youtube {
 }
 
 @media (min-width: 455px) {
-    .group > h1 {
+/*    .group > h1 {
         margin-bottom: 0;
-    }
+    }*/
 
     .title {
         text-align: left;

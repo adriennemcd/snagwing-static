@@ -14,8 +14,13 @@ $( ".hamburger" ).click(function() {
     $( '#nav-toggle' ).toggleClass( "active" );
     if($('#nav-toggle').attr('class') == 'active') {
         $('nav').animate({width: '290px'});
+        // $('.social').animate({width: '95%'});
+        $('.social').css({'width':'95%','text-align':'right'});
+        $('.social > i').css('padding-left','15px');
     } else {
         $('nav').animate({width: '60px'});
+        $('.social').css({'width':'22px','text-align':'none'});
+        $('.social > i').animate({'padding-left':'0px'});
     }
     return false;
 });
@@ -25,9 +30,12 @@ $(window).scroll(function() {
     if($(this).scrollTop() >0 && $('#nav-toggle').is('.active')) {
         $( '#nav-toggle' ).toggleClass( "active" );
         $('nav').animate({width: '60px'});
+        $('.social').css({'width':'22px','text-align':'none'});
+        $('.social > i').animate({'padding-left':'0px'});
     }
 
     if ($(this).scrollTop() > 300) {
+        $('.social').animate({'bottom':'50px'});
         $('.goUp').fadeIn();
     } else {
         $('.goUp').fadeOut();
