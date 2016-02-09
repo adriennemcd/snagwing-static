@@ -79,14 +79,14 @@ $('.goUp').click(function () {
             });
 
             // set slide container width
-            if (window.matchMedia("(max-width: 400px)").matches) {
+            if (window.matchMedia("(max-width: 525px)").matches) {
                 $(slidesContainerId+" .cslide-slides-container").css({
                     width : slidesContainerWidth,
                     visibility : "visible"
                 });
                 responSlidesContainerWidth = slidesContainerWidth;
 
-            } else if (window.matchMedia("(min-width: 401px) and (max-width: 699px)").matches) {
+            } else if (window.matchMedia("(min-width: 526px) and (max-width: 699px)").matches) {
                 $(slidesContainerId+" .cslide-slides-container").css({
                     width : slidesContainerWidth50,
                     visibility : "visible"
