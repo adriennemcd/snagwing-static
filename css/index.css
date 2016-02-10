@@ -1,4 +1,6 @@
-/* BASIC ELEMENTS */
+/* BASIC ELEMENTS
+======================================================================
+*/
 
 body {
     background-color: #222831;
@@ -16,6 +18,10 @@ div, section {
 
 section {
     margin-bottom: 125px;
+}
+
+section.single-header {
+    margin-bottom: 0px;
 }
 
 button {
@@ -97,7 +103,9 @@ a:active {
 }
 
 
-/* BASIC LAYOUTS */
+/* BASIC LAYOUTS + STYLES
+======================================================================
+*/
 
 .main {
     float: left;
@@ -126,6 +134,20 @@ a:active {
 
 .content-narrow {
     padding: 0 15px;
+}
+
+.icon-spacer:after {
+    font-family: FontAwesome;
+    content: "\f101";
+    font-size: .8em;
+    vertical-align: middle;
+}
+
+.emphasis {
+    font-size: 1.6em;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 60px 0 30px 0;
+    margin-bottom: 0px;
 }
 
 /* NAVIGATION */
@@ -245,7 +267,13 @@ nav {
     text-align: center;
 }
 
-/* HOMEPAGE SECTIONS */
+.title > a:link, .title > a:hover, .title > a:visited, .title > a:active {
+    color: white;
+}
+
+/* HOMEPAGE SECTIONS
+======================================================================
+*/
 
 .highlight {
     position: relative;
@@ -318,7 +346,47 @@ iframe.youtube {
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-/* SLIDES */
+/* SINGLE PAGE BASIC STYLES
+======================================================================
+*/
+
+.single-header {
+    background-image: linear-gradient(rgba(0, 173, 181, 0.40), rgba(0, 173, 181, 0.40)), url(../assets/images/candlelit.jpg);
+    background-size: cover;
+    background-position: center top;
+    width: 100%;
+}
+
+.single-header .title {
+    width: 100%;
+    padding: 25px 0 5px 0;
+}
+
+.single-title {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    color: #FFF;
+    margin: 0;
+    padding: 0px 0 20px 0;
+}
+
+.title.icon-spacer:after {
+    display: none;
+    padding: 0 20px 12px 20px;
+}
+
+
+/* CAROUSEL SLIDES + GRID STYLE LISTS (home, music, news)
+======================================================================
+*/
+
+.album {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 0 5px 5px 0;
+}
 
 #cslide-slides {
     position: relative;
@@ -341,10 +409,14 @@ iframe.youtube {
 
 .overlay {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
     background-color: rgba(0,68,71,0.8);
+}
+
+.album .overlay {
+    width: calc(100% - 5px);
 }
 
 .overlay > p {
@@ -352,6 +424,10 @@ iframe.youtube {
     display: inline;
     margin-bottom: 0px;
     text-align: center;
+}
+
+.overlay > .icon-spacer:after {
+    padding: 0 10px;
 }
 
 p.descrip {
@@ -402,15 +478,19 @@ p.descrip {
     right: 0;
 }
 
-/* MEDIA QUERIES */
+/* MEDIA QUERIES
+======================================================================
+*/
 
 /* break for album details hover overlay */
 @media (min-width: 1000px) {
-    .cslide-slide {
+    .cslide-slide,
+    .album {
         overflow: hidden;
     }
 
-    .cslide-slide img {
+    .cslide-slide img,
+    .album img {
         -webkit-transition: all 300ms ease-out;
         -moz-transition: all 300ms ease-out;
         -o-transition: all 300ms ease-out;
@@ -432,7 +512,12 @@ p.descrip {
         transition: all 300ms ease-out;
     }
 
-    .cslide-slide:hover .overlay {
+    .album .overlay {
+        height: calc(100% - 5px);
+    }
+
+    .cslide-slide:hover .overlay,
+    .album:hover .overlay {
         opacity: 1;
     }
 
@@ -442,12 +527,12 @@ p.descrip {
         margin-bottom: .8em;
     }
 
-    p.descrip {
-        display: inline;
+    .overlay > .icon-spacer:after {
+        display: none;
     }
 
-    .spacer {
-        display: none;
+    p.descrip {
+        display: inline;
     }
 
     .overlay > p:first-child {
@@ -464,6 +549,10 @@ p.descrip {
     iframe.youtube {
         height: 500px;
     }
+
+    .album {
+        width: 33.33%;
+    }
 }
 
 @media (min-width: 650px) {
@@ -478,6 +567,11 @@ p.descrip {
         width: 50%;
         padding-left: 15px;
     }
+
+    .emphasis {
+        font-size: 2em;
+        padding: 80px 0 40px 0;
+    }
 }
 
 @media (min-width: 550px) and (max-width: 849px) {
@@ -488,10 +582,29 @@ p.descrip {
     iframe.youtube {
         height: 400px;
     }
+
+    .album {
+        width: 50%;
+    }
 }
 
-@media (min-width: 455px) {
+@media (min-width: 526px) {
     .title {
         text-align: left;
+    }
+
+    .single-header .title {
+        width: auto;
+        padding: 25px 0 13px 0;
+    }
+
+    .single-title {
+        padding-top: 25px;
+        float: left;
+        width: auto;
+    }
+
+    .title.icon-spacer:after {
+        display: inline-block;
     }
 }
