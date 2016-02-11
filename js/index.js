@@ -42,8 +42,16 @@ $(window).scroll(function() {
     }
 });
 
-$('.goUp').click(function () {
+// scroll up button
+$('.goUp').click(function() {
     $("html, body").animate({ scrollTop: 0}, 600);
+    return false;
+});
+
+// toggle content of list items (song lyrics and other details) and rotate from '+' to 'x'
+$('.list-title').click(function() {
+    $(this).siblings('.list-content').slideToggle();
+    $(this).toggleClass( "active" );
     return false;
 });
 
