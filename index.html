@@ -1,5 +1,6 @@
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Roboto:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/normalized.css">
@@ -16,7 +17,6 @@
             <li><a href="about.html">about</a></li>
             <li><a href="music.html">music</a></li>
             <li><a href="news.html">news</a></li>
-            <li><a href="contact.html">contact</a></li>
         </ul>
     </div>
     <div class="goUp">
@@ -28,7 +28,7 @@
         <i class="fa fa-envelope-square"></i>
     </div>
 </nav>
-<div class="main">
+<div class="main homepage">
     <section class="highlight group">
         <div class="wrapper">
             <div class="title"><a href="index.html">snagwing</a></div>
@@ -39,110 +39,77 @@
         </div>
     </section>
     <div class="wrapper" >
-        <section class="music">
-            <h1>albums + eps</h1>
-            <section id="cslide-slides" class="cslide-slides-master">
-                <div class="cslide-prev-next">
-                    <div class="cslide-prev"><i class="fa fa-arrow-circle-left"></i></div>
-                    <div class="cslide-next"><i class="fa fa-arrow-circle-right"></i></div>
-                </div>
-                <div class="cslide-slides-container">
-                    <div class="cslide-slide">
+        <section class="music group">
+            <h1 class="icon-spacer">albums + eps</h1>
+            <div class="album-container">
+                    <article class="album">
                         <img src="assets/images/triangleEP.jpg">
                         <div class="overlay content">
                             <p class="icon-spacer">Triangle EP</p>
                             <p>Dec 2015</p>
                             <button>MORE INFO</button>
                         </div>
-                    </div>
-                    <div class="cslide-slide">
+                    </article>
+                    <article class="album">
                         <img src="assets/images/look.jpg">
                         <div class="overlay content">
                             <p class="icon-spacer">Look</p>
                             <p>Dec 2015</p>
                             <button>MORE INFO</button>
                         </div>
-                    </div>
-                    <div class="cslide-slide">
+                    </article>
+                    <article class="album">
                         <img src="assets/images/hotsesh.jpg">
                         <div class="overlay content">
                             <p class="icon-spacer">Hot Sesh</p>
                             <p>Dec 2015</p>
                             <button>MORE INFO</button>
                         </div>
-                    </div>
-                    <div class="cslide-slide">
-                        <img src="assets/images/honestly.jpg">
-                         <div class="overlay content">
-                            <p class="icon-spacer">Honestly</p>
-                            <p>Dec 2015</p>
-                            <button>MORE INFO</button>
-                        </div>
-                    </div>
-                    <div class="cslide-slide">
-                        <img src="assets/images/dreamsongs.jpg">
-                        <div class="overlay content">
-                            <p class="icon-spacer">Dream Songs</p>
-                            <p>Dec 2015</p>
-                            <button>MORE INFO</button>
-                        </div>
-                    </div>
-                    <div class="cslide-slide">
-                        <img src="assets/images/patience.jpg">
-                        <div class="overlay content">
-                            <p class="icon-spacer">Patience</p>
-                            <p>Dec 2015</p>
-                            <button>MORE INFO</button>
-                        </div>
-                    </div>
-                </div>
-            </section><!-- #cslide-slides -->
+                    </article>
+            </div><!-- .album-container -->
         </section>
+        <section class="signup content">
+            <h1>sign up</h1>
+            <p>get show announcements, album release dates etc!</p>
+            <form><input type="text"></input><button>submit</button></form>
+        </section>
+        <section class="news group">
+            <h1 class="icon-spacer">news</h1>
+            <article class="news-item content">
+                <h2><a href="about.html">Release of Triangle EP</a></h2>
+                <p class="date">04 Feb 2016</p>
+                <p>Just released!  New EP very exciting.  How much text will look okay here? [...]</p>
+            </article>
+            <article class="news-item content">
+                <h2><a href="about.html">Come see Snagwing at Candlelit</a></h2>
+                <p class="date">04 Feb 2016</p>
+                <p>Snagwing is playing at Candlelit, first show [...]</p>
+            </article>
+            <article class="news-item content">
+                <h2><a href="about.html">Here's another news item</a></h2>
+                <p class="date">04 Feb 2016</p>
+                <p>tralalallalala laalalalaaaaa aaaa aaaaaaa aa [...]</p>
+            </article>
+        </section><!-- .news -->
         <div class="group">
-            <section class="insta group">
-                <h1>instagram</h1>
-                <div class="insta-container group">
-                    <div class="insta-pic"><img src="assets/images/candlelit_sq.jpg"></div>
-                    <div class="insta-pic"><img src="assets/images/candlelit_sq.jpg"></div>
-                    <div class="insta-pic"><img src="assets/images/candlelit_sq.jpg"></div>
-                    <div class="insta-pic"><img src="assets/images/candlelit_sq.jpg"></div>
-<!--                     <div class="insta-pic"><img src="assets/images/candlelit_sq.jpg"></div>
-                    <div class="insta-pic"><img src="assets/images/candlelit_sq.jpg"></div> -->
-                </div>
-            </section><!-- .insta -->
-            <section class="news group">
-                <h1>news</h1>
-                <div class="news-item content">
-                    <h2><a href="about.html">Release of Triangle EP</a></h2>
-                    <p class="date">04 Feb 2016</p>
-                    <p>Just released!  New EP very exciting.  How much text will look okay here? [...]</p>
-                </div>
-                    <div class="news-item content">
-                    <h2><a href="about.html">Come see Snagwing at Candlelit</a></h2>
-                    <p class="date">04 Feb 2016</p>
-                    <p>Snagwing is playing at Candlelit, first show [...]</p>
-                </div>
-                    <div class="news-item content">
-                    <h2><a href="about.html">Here's another news item</a></h2>
-                    <p class="date">04 Feb 2016</p>
-                    <p>tralalallalala laalalalaaaaa aaaa aaaaaaa aa [...]</p>
-                </div>
-<!--                     <div class="news-item">
-                    <h2><a href="about.html">Here's another news item</a></h2>
-                    <p class="date">04 Feb 2016</p>
-                    <p>tralalallalala laalalalaaaaa aaaa aaaaaaa aa [...]</p>
-                </div> -->
-            </section><!-- .news -->
+            <h1>social media</h1>
+<!--             <section class="insta group"> -->
+                <section class="insta-container group">
+                    <article class="insta-pic"><img src="assets/images/candlelit_sq.jpg"></article>
+                    <article class="insta-pic"><img src="assets/images/candlelit_sq.jpg"></article>
+                    <article class="insta-pic"><img src="assets/images/candlelit_sq.jpg"></article>
+                    <article class="insta-pic"><img src="assets/images/candlelit_sq.jpg"></article>
+                </section>
+<!--             </section> -->
+            <section class="youtube-container">
+                <iframe class="youtube" width="100%" height="300px" src="https://www.youtube.com/embed/2pwhHtrjoX8?rel=0" frameborder="0" allowfullscreen></iframe>
+            </section>
         </div><!-- .group -->
-        <section class="youtube">
-            <h1>video</h1>
-            <iframe class="youtube" width="100%" height="300px" src="https://www.youtube.com/embed/2pwhHtrjoX8?rel=0" frameborder="0" allowfullscreen></iframe>
-        </section>
     </div> <!-- .wrapper -->
     <footer class="wrapper">
-            <div class="footer-item content">
+            <article class="footer-item content">
                 <p>All content &copy; Snagwing 2011 - 2016 | website made by <a href="http://www.adriennemcd.com" target="_blank"><img src="assets/images/littlelogo.png" class="amcd"></a></p>
-            </div>
+            </article>
     </footer>
 </div><!-- .main -->
 <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>

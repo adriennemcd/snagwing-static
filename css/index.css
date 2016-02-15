@@ -12,11 +12,11 @@ p {
     margin-bottom: .8em;
 }
 
-div, section {
+div, section, article {
     box-sizing: border-box;
 }
 
-section {
+.singlepage section {
     margin-bottom: 125px;
 }
 
@@ -73,6 +73,7 @@ p,button {
 
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Josefin Sans', sans-serif;
+    margin-top: 0px;
 }
 
 h1,h2,h3,h4,h5,h6,p {
@@ -168,6 +169,10 @@ a:active {
     content: "\f101";
     font-size: .8em;
     vertical-align: middle;
+}
+
+h1.icon-spacer:after {
+    padding: 0 15px;
 }
 
 .icon-plus:after {
@@ -326,6 +331,15 @@ nav {
     background-position: center bottom;
     width: 100%;
     height: 100vh;
+    margin: 0px;
+}
+
+.highlight, .insta-container, .youtube-container, .singlepage .music {
+    margin: 0 0 125px 0;
+}
+
+.music, .signup, .news {
+    margin: 125px 0;
 }
 
 .HL-content {
@@ -364,6 +378,17 @@ nav {
 .insta-pic:last-child,
 .insta-pic:nth-last-child(2) {
     padding-bottom: 0px;
+}
+
+.signup {
+    width: 100%;
+    background-color: #393E46;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.news {
+    width: 100%;
 }
 
 .news-item {
@@ -487,6 +512,7 @@ iframe.youtube {
 .item-prev-next {
     width: 194px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .item-next, .item-prev {
@@ -517,25 +543,6 @@ iframe.youtube {
     padding: 0 5px 5px 0;
 }
 
-#cslide-slides {
-    position: relative;
-}
-.cslide-slides-master {
-    overflow: hidden;
-    margin-bottom:60px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-.cslide-slides-master:last-child {
-    margin-bottom:0;
-}
-.cslide-slides-container {
-    visibility: hidden;
-}
-.cslide-slide {
-    position: relative;
-    float:left;
-}
-
 .overlay {
     position: absolute;
     top: 0;
@@ -563,49 +570,6 @@ iframe.youtube {
     display: none;
 }
 
-/* prev next buttons */
-.cslide-prev-next {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    display: none; /* displayed with js */
-}
-
-.cslide-prev,.cslide-next {
-    box-sizing: border-box;
-    z-index: 101;
-    position: absolute;
-    width: 50px;
-    height: 100%;
-    padding: 0 10px;
-    cursor: pointer;
-    text-align: center;
-    color: #222831;
-}
-
-.fa-arrow-circle-left,.fa-arrow-circle-right {
-    position: absolute;
-    top: 42%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    font-size: 3em;
-    font-weight: bold;
-}
-
-.cslide-prev:hover,
-.cslide-next:hover {
-    color: #393E46;
-}
-
-.cslide-prev {
-    left: 0;
-}
-
-.cslide-next {
-    right: 0;
-}
 
 /* MEDIA QUERIES
 ======================================================================
@@ -675,12 +639,24 @@ iframe.youtube {
         font-size: 6em;
     }
 
-    iframe.youtube {
-        height: 500px;
+    .insta-container, .youtube-container {
+        float: left;
+        width: calc(50% - 15px);
+        margin-right: 15px;
     }
 
     .album {
         width: 33.33%;
+    }
+
+    .news-item {
+        width: calc(33.33% - 6.66px);
+        float: left;
+        margin: 0 10px 0 0;
+    }
+
+    .news-item:last-child {
+        margin-right: 0px;
     }
 
     .album-container {
@@ -715,18 +691,6 @@ iframe.youtube {
 }
 
 @media (min-width: 650px) {
-    .insta {
-        float: left;
-        width: 50%;
-        padding-right: 15px;
-    }
-
-    .news {
-        float: left;
-        width: 50%;
-        padding-left: 15px;
-    }
-
     .emphasis {
         font-size: 2em;
         padding: 80px 0 40px 0;
@@ -738,12 +702,16 @@ iframe.youtube {
         font-size: 4.5em;
     }
 
-    iframe.youtube {
-        height: 400px;
+    .youtube {
+        height: 300px;
     }
 
     .album {
         width: 50%;
+    }
+
+    .album:last-child {
+        display: none;
     }
 }
 
