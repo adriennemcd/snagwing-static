@@ -11,11 +11,11 @@ $( ".hamburger" ).click(function() {
         $('header').animate({width: '290px'});
         // $('.social').animate({width: '95%'});
         $('.social').css({'width':'95%','text-align':'right'});
-        $('.social > i').css('padding-left','15px');
+        $('.social > a > i').css('padding-left','15px');
     } else {
         $('header').animate({width: '60px'});
         $('.social').css({'width':'22px','text-align':'none'});
-        $('.social > i').animate({'padding-left':'0px'});
+        $('.social > a > i').animate({'padding-left':'0px'});
     }
     return false;
 });
@@ -26,7 +26,7 @@ $(window).scroll(function() {
         $( '#nav-toggle' ).toggleClass( "active" );
         $('header').animate({width: '60px'});
         $('.social').css({'width':'22px','text-align':'none'});
-        $('.social > i').animate({'padding-left':'0px'});
+        $('.social > a > i').animate({'padding-left':'0px'});
     }
 
     if ($(this).scrollTop() > 300) {
