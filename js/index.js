@@ -8,12 +8,12 @@
 $( ".hamburger" ).click(function() {
     $( '#nav-toggle' ).toggleClass( "active" );
     if($('#nav-toggle').attr('class') == 'active') {
-        $('nav').animate({width: '290px'});
+        $('header').animate({width: '290px'});
         // $('.social').animate({width: '95%'});
         $('.social').css({'width':'95%','text-align':'right'});
         $('.social > i').css('padding-left','15px');
     } else {
-        $('nav').animate({width: '60px'});
+        $('header').animate({width: '60px'});
         $('.social').css({'width':'22px','text-align':'none'});
         $('.social > i').animate({'padding-left':'0px'});
     }
@@ -24,7 +24,7 @@ $( ".hamburger" ).click(function() {
 $(window).scroll(function() {
     if($(this).scrollTop() >0 && $('#nav-toggle').is('.active')) {
         $( '#nav-toggle' ).toggleClass( "active" );
-        $('nav').animate({width: '60px'});
+        $('header').animate({width: '60px'});
         $('.social').css({'width':'22px','text-align':'none'});
         $('.social > i').animate({'padding-left':'0px'});
     }
@@ -49,13 +49,3 @@ $('.list-title').click(function() {
     $(this).toggleClass( "active" );
     return false;
 });
-
-//Check whether the window is tablet or mobile based on nav icon visibility
-//Allows nav to be visible when window is resized large, even with toggling on smaller screens
-// function checkSize(){
-//     if ($(".fa-bars").css('display') == 'none'){
-//       $('.navi > ul').css('display', 'inline');
-//     } else {
-//       $('.navi > ul').css('display', 'none');
-//     }
-// }
