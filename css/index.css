@@ -34,11 +34,11 @@ p {
     margin-bottom: .8em;
 }
 
-p,button {
+p,.button {
     font-family: 'Roboto', sans-serif;
 }
 
-button {
+.button {
     background-color: transparent;
     transition: background-color 0.2s ease;
     text-transform: uppercase;
@@ -48,36 +48,36 @@ button {
     color: white;
 }
 
-button:hover {
+.button:hover {
     background-color: white;
     color: #222831;
     transition: none;
 }
 
-button > a:link, button > a:visited, button > a:active {
+a.button:link, a.button:visited, a.button:active {
     color: white;
 }
 
-button:hover a {
+a.button:hover {
     color: #222831;
 }
 
-button.alt {
+a.button.alt {
     border: 2px solid #EEE;
     padding: 5px;
     color: #EEE;
     font-size: .8em;
 }
 
-button.alt:hover {
+a.button.alt:hover {
     background-color: #EEE;
 }
 
-button.alt > a:link, button.alt > a:visited, button.alt > a:active {
+a.button.alt:link, a.button.alt:visited, a.button.alt:active {
     color: #EEE;
 }
 
-button.alt:hover a {
+a.button.alt:hover {
     color: #222831;
 }
 
@@ -536,21 +536,10 @@ a.whitei:link, a.whitei:hover, a.whitei:visited, a.whitei:active {
     display: none;
 }
 
-.singlepage .item-prev-next.desktop {
+.blog.item-prev-next {
     display: block;
 }
 
-.item.album {
-    background-color: #EEE;
-}
-
-.item.album:nth-child(2n) {
-    background-color: #393E46;
-}
-
-.item.album img {
-    opacity: 0;
-}
 
 /* GRID STYLE ITEMS (home, music)
 ======================================================================
@@ -582,7 +571,7 @@ a.whitei:link, a.whitei:hover, a.whitei:visited, a.whitei:active {
     padding: 0 10px;
 }
 
-.overlay > button {
+.overlay > .button {
     display: none;
 }
 
@@ -633,7 +622,7 @@ a.whitei:link, a.whitei:hover, a.whitei:visited, a.whitei:active {
         display: none;
     }
 
-    .overlay > button {
+    .overlay > .button {
         display: inline;
     }
 
@@ -685,7 +674,7 @@ a.whitei:link, a.whitei:hover, a.whitei:visited, a.whitei:active {
 
     .list-container {
         float: right;
-        width: calc(96% - 350px);
+        width: calc(96% - 300px);
         margin: 60px 0 0 0;
     }
 
@@ -694,6 +683,7 @@ a.whitei:link, a.whitei:hover, a.whitei:visited, a.whitei:active {
     }
 
     .item-prev-next.desktop {
+        display: block;
         width: 194px;
         margin: 60px auto 0 auto;
     }
@@ -755,11 +745,11 @@ a.whitei:link, a.whitei:hover, a.whitei:visited, a.whitei:active {
     }
 
     .bandcamp-container {
-        width: 350px;
+        width: 300px;
     }
 
     .bandcamp {
-        width: 350px;
-        height: 350px;
+        width: 300px;
+        height: 300px;
     }
 }
